@@ -9,13 +9,12 @@ Group:		System/Fonts/True type
 Source0:	fonts-ttf-armenian-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRoot:	%_tmppath/%name-%version-%release-root
-BuildRequires:	freetype-tools
+BuildRequires:	mkfontscale
 
 %description
 This Package provides free Armenian TrueType fonts.
 
 %prep
-
 %setup -q
 
 %build
@@ -25,10 +24,11 @@ This Package provides free Armenian TrueType fonts.
 rm -fr %buildroot
 
 mkdir -p %buildroot/%_datadir/fonts/TTF/armenian/
-
-/usr/sbin/ttmkfdir -u > fonts.scale
+cp * %buildroot/%_datadir/fonts/TTF/armenian
+pushd %buildroot/%_datadir/fonts/TTF/armenian
+mkfontscale
 cp fonts.scale fonts.dir
-cp * %buildroot/%_datadir/fonts/TTF/armenian/
+popd
 
 mkdir -p %{buildroot}%_sysconfdir/X11/fontpath.d/
 ln -s ../../..%_datadir/fonts/TTF/armenian \
