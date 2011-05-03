@@ -1,7 +1,7 @@
 Summary:	Armenian TrueType fonts
 Name:		fonts-ttf-armenian
 Version:	1.1
-Release:	%mkrel 20
+Release:	%mkrel 21
 License:	Distributable
 URL:		http://www.freenet.am/armnls/
 Group:		System/Fonts/True type
