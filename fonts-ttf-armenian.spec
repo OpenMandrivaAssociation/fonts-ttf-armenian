@@ -4,7 +4,7 @@ Version:	1.1
 Release:	33
 License:	Distributable
 Group:		System/Fonts/True type
-Url:		http://www.freenet.am/armnls/
+Url:		https://www.freenet.am/armnls/
 Source0:	fonts-ttf-armenian-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	fontconfig
